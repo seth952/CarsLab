@@ -17,7 +17,7 @@ public class ElectricCarTest {
     public void before() {
         engine = new Engine(400);
         tyre = new Tyre(30);
-        electricCar = new ElectricCar(30000, "Pink", engine, tyre, 1);
+        electricCar = new ElectricCar(30000, "Pink", engine, tyre, 1, 20000, 15000);
     }
 
     @Test
@@ -44,4 +44,13 @@ public class ElectricCarTest {
     public void hasMilesByKil() {
         assertEquals(1, electricCar.getMilesPerKil());
     }
+    @Test
+    public void hasPriceToBuy(){
+        assertEquals(20000, electricCar.getPriceToBuy());
+    }
+    @Test
+    public void hasPriceToSell(){
+        assertEquals(15000, electricCar.getPriceToSell());
+    }
+
 }

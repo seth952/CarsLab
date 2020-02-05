@@ -1,7 +1,9 @@
 package buisness;
 
+import cars.Vehicle;
+
 public interface IBuy {
 
-    void buyVehicle();
+    void buyVehicle(Vehicle vehicle);
 
 }

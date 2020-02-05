@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class CustomerTest {
+public class CustomerTest  {
 
     Customer customer;
     ElectricCar electricCar1;
@@ -22,13 +22,13 @@ public class CustomerTest {
     @Before
     public void before() {
         customer = new Customer(40000);
-        electricCar1 = new ElectricCar(30000, "Green", engine1, tyre1, 3);
-        electricCar2 = new ElectricCar(30000, "Blueeeee", engine1, tyre1, 3);
+        electricCar1 = new ElectricCar(30000, "Green", engine1, tyre1, 3, 10000, 12000);
+        electricCar2 = new ElectricCar(30000, "Blueeeee", engine1, tyre1, 3, 20000, 15000);
     }
 
     @Test
     public void customerHasMoney() {
-        assertEquals(400000, customer.getMoney(), 0.00);
+        assertEquals(40000, customer.getMoney(), 0.00);
     }
 
     @Test
@@ -42,5 +42,13 @@ public class CustomerTest {
         customer.addCarToCollection(electricCar2);
         assertEquals(2, customer.carCount());
     }
+    @Test
+    public void buyCar(){
+        customer.buyVehicle(electricCar1);
+        assertEquals(1, customer.carCount());
+        assertEquals(30000, customer.getMoney(), 0.01);
+    }
+
+
 
 }

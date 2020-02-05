@@ -1,11 +1,12 @@
 package buisness;
 
+import cars.ElectricCar;
 import cars.PetrolCar;
 import cars.Vehicle;
 
 import java.util.ArrayList;
 
-public class Dealership implements IBuy{
+public class Dealership {
 
     private double till;
 
@@ -30,8 +31,12 @@ public class Dealership implements IBuy{
         this.stock.add(petrolCar);
     }
 
-    @Override
-    public void buyVehicle() {
-    
+
+
+    public void buyVehicle(PetrolCar vehicle) {
+        if (vehicle.getPriceToBuy() < till) {
+            addCarToCollection(vehicle);
+            till -= vehicle.getPriceToBuy();
+        }
     }
 }
