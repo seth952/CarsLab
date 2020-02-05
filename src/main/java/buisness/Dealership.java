@@ -5,7 +5,7 @@ import cars.Vehicle;
 
 import java.util.ArrayList;
 
-public class Dealership {
+public class Dealership implements IBuy{
 
     private double till;
 
@@ -28,5 +28,10 @@ public class Dealership {
 
     public void addCarToCollection(PetrolCar petrolCar) {
         this.stock.add(petrolCar);
+    }
+
+    @Override
+    public void buyVehicle() {
+    
     }
 }

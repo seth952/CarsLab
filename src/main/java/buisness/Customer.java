@@ -5,7 +5,7 @@ import cars.Vehicle;
 
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer  implements IBuy {
 
     private double money;
     private ArrayList<Vehicle> vehicles;
@@ -25,5 +25,10 @@ public class Customer {
 
     public void addCarToCollection(ElectricCar electricCar) {
         this.vehicles.add(electricCar);
+    }
+
+    @Override
+    public void buyVehicle() {
+
     }
 }
